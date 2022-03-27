@@ -1,6 +1,6 @@
 # Taille des ressources
 
-La seule chose plus lente que de manipuler le DOM est la communication entre serveurs, en particulier pour les usagers mobiles ou avec une connexion limitée. Vous pouvez passer du temps à optimiser votre code avec `Htlm.Lazy` et `Html.Keyed`, votre application restera aussi lente que son chargement.
+La seule chose plus lente que de manipuler le DOM est la communication entre serveurs, en particulier pour les usagers mobiles ou avec une connexion limitée. Vous pouvez passer du temps à optimiser votre code avec `Html.Lazy` et `Html.Keyed`, votre application restera aussi lente que son chargement.
 
 Celui-ci peut être améliorer grandement en transférant moins d'octets. Par exemple, si la taille d'une ressource de 122ko peut-être réduite à 9ko, alors son chargement sera accéléré! Ce genre de résultats peut être obtenu en utilisant les techniques suivantes :
 
