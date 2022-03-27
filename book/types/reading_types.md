@@ -205,7 +205,7 @@ Nous ne nous intéressons qu'à la longueur de ces listes, sans jamais nous souc
 
 À nouveau, la variable de type `a` peut varier en fonction de comment [`List.reverse`][reverse] est utilisée. Mais ici, nous avons un `a` dans l'argument *et* le résultat. Cela signifie que quand vous passez une `List Int`, vous récupérez une `List Int` en retour également. Une fois décidé à quoi correspond la variable de type `a`, le type sous-jacent doit être cohérent partout.
 
-> **Note :** Les variables de type doivent commencer par un caractère minuscule, mais elles peuvent tout aussi bien être des mots entiers. Nous pourrions écrire le type de `List.length` avec une signature `List value -> Int` et celui de `List.reverse` avec `List element -> List element`. Aucun problème tant qu'on commence bien une lettre minuscule. Les variables de type `a` et `b` sont souvent utilisées par convention, mais certaines annotations bénéficient aussi de noms plus appropriés.
+> **Note :** Les variables de type doivent commencer par un caractère minuscule, mais elles peuvent tout aussi bien être des mots entiers. Nous pourrions écrire le type de `List.length` avec une signature `List value -> Int` et celui de `List.reverse` avec `List element -> List element`. Aucun problème tant qu'on commence bien par une lettre minuscule. Les variables de type `a` et `b` sont souvent utilisées par convention, mais certaines annotations bénéficient aussi de noms plus appropriés.
 
 [length]: https://package.elm-lang.org/packages/elm/core/latest/List#length
 [reverse]: https://package.elm-lang.org/packages/elm/core/latest/List#reverse
@@ -213,7 +213,7 @@ Nous ne nous intéressons qu'à la longueur de ces listes, sans jamais nous souc
 
 ## Variables de type contraintes
 
-Il y a une variante spéciale de types variables en Elm appelés variables de type **contraintes**. L'exemple la plus connue est `number`, qu'utilisent de nombreuses fonctions comme [`negate`](https://package.elm-lang.org/packages/elm/core/latest/Basics#negate) par exemple :
+Il y a une variante spéciale de variables de type en Elm appelées *variables de type **contraintes***. Une des plus courantes est `number`, qu'utilisent de nombreuses fonctions comme [`negate`](https://package.elm-lang.org/packages/elm/core/latest/Basics#negate) par exemple :
 
 {% replWithTypes %}
 [
