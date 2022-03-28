@@ -1,6 +1,6 @@
 # Formulaires
 
-Maintenant, construisons un formulaire basique avec des attributs pour le nom, le mot de passe et la vérification du mot de passe. Nous implémenterons une étape de validation qui vérifiera que les mots de passe saisis sont identiques. 
+Maintenant, construisons un formulaire basique comportant des champs pour le nom, le mot de passe et la vérification du mot de passe. Nous implémenterons une étape de validation qui vérifiera que les mots de passe saisis sont identiques.
 
 Le code du programme est disponible ci-dessous. Vous pouvez cliquer sur le bouton bleu "Éditer" pour le modifier avec l'éditeur en ligne. Essayez d'introduire une coquille pour afficher des messages d'erreur. Par exemple, en saisissant incorrectement le champ `password` ou la fonction `placeholder`. **Allez-y, cliquez sur le bouton bleu !**
 
@@ -87,7 +87,7 @@ viewValidation model =
     div [ style "color" "red" ] [ text "Passwords do not match!" ]
 ```
 
-Ce programme est similaire à celui sur les [zones de texte](text_fields.md) mais avec plus d'attributs.
+Ce programme est similaire à celui sur les [zones de texte](text_fields.md) mais avec plus de champs.
 
 
 # Model
@@ -131,7 +131,7 @@ update msg model =
       { model | passwordAgain = password }
 ```
 
-Chaque cas utilise la syntaxe de modification d'enregistrement pour transformer l'attribut du modèle concerné. Cela reste semblable à d'autres exemples vus précédemment, mais avec plus de cas.
+Chaque cas utilise la syntaxe de modification d'enregistrement pour transformer le champ du modèle concerné. Cela reste semblable à d'autres exemples vus précédemment, mais avec plus de cas.
 
 Nous ferons plus dans l'originalité du coté de la fonction `view`.
 
@@ -153,7 +153,7 @@ view model =
 
 Dans les exemples précédents, nous utilisions `input` et `div` directement. Pourquoi faire différemment cette fois ?
 
-Une caractéristique importante du HTML en Elm est que `input` et `div` sont de simples fonctions. Chacune prend (1) une liste d'attributs et (2) une liste de nœuds enfants. **Comme nous manipulons des fonctions Elm, nous pouvons utiliser toute la puissance de Elm à notre disposition pour construire nos vues !** Notamment, nous pouvons factoriser le code répétitif dans des fonctions séparées, comme nous allons le voir par la suite.
+Une caractéristique importante du HTML en Elm est que `input` et `div` sont de simples fonctions. Chacune prend (1) une liste de champs et (2) une liste de nœuds enfants. **Comme nous manipulons des fonctions Elm, nous pouvons utiliser toute la puissance de Elm à notre disposition pour construire nos vues !** Notamment, nous pouvons factoriser le code répétitif dans des fonctions séparées, comme nous allons le voir par la suite.
 
 Notre fonction `view` procède à trois appels de la fonction `viewInput` :
 
@@ -178,7 +178,7 @@ viewValidation model =
 
 Cette fonction compare les deux mots de passe saisis. S'ils correspondent, un message de confirmation s'affiche en vert. S'ils diffèrent, un message d'erreur s'affiche en rouge.
 
-Ces fonctions utilitaires montrent l'avantage d'avoir une bibliothèque HTML écrite en Elm. Il est possible d'intégrer ce code directement dans la fonction `view`, mais écrire des fonctions réutilisables est normal en Elm, même pour la partie visuelle. Si le code devient difficile à comprendre, peut-être vaut-il mieux le décomposer en plusieurs fonctions utilitaires. 
+Ces fonctions utilitaires montrent l'avantage d'avoir une bibliothèque HTML écrite en Elm. Il est possible d'intégrer ce code directement dans la fonction `view`, mais écrire des fonctions réutilisables est normal en Elm, même pour la partie visuelle. Si le code devient difficile à comprendre, peut-être vaut-il mieux le décomposer en plusieurs fonctions utilitaires.
 
 > **Exercices:** Regardez cet [exemple](https://elm-lang.org/examples/forms) sur l'éditeur en ligne. Essayez d'ajouter les caractéristiques suivantes à la fonction utilitaire `viewValidation`:
 >
