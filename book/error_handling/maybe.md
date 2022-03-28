@@ -46,7 +46,7 @@ Parfois vous avez besoin d'une fonction qui renvoie un résultat pour certaines 
 
 Essayez d'appeler `String.toFloat` avec d'autres chaînes de caractères pour voir ce qui se passe ⬆️
 
-Toutes les chaînes de caractères ne sont pas interpretables comme nombre, ce que modélise cette fonction explicitement. Est-ce que cette chaîne correspond à un nombre ? *Maybe!* (peut-être). Nous pouvons *pattern-matcher* la valeur résultante pour savoir si on a réussi cette conversion ou pas.
+Toutes les chaînes de caractères ne sont pas interpretables comme nombre, ce que modélise cette fonction explicitement. Est-ce que cette chaîne correspond à un nombre ? *Maybe!* (peut-être). Nous pouvons [*pattern matcher*](/types/pattern_matching.html) la valeur résultante pour savoir si on a réussi cette conversion ou pas.
 
 > **Exercice :** Nous avons écrit un [petit programme](https://ellie-app.com/bJSMQz9tydqa1) qui permet de convertir des températures exprimées en degrés Celsius vers Fahrenheit. Essayez de refactorer la vue (`view`) de différentes façons. Est-ce que vous arrivez à mettre une bordure rouge autour du champ de saisie lorsque la valeur qu'il contient est invalide ? Pouvez-vous ajouter d'autres conversions ? Fahrenheit en Celsius ? Pouces en Mètres ?
 

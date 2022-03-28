@@ -16,7 +16,7 @@ toAge userInput =
 -- toAge "ZZ" == InvalidInput
 ```
 
-Quelle que soit la valeur de saisie passée à la fonction `toAge`, elle produira toujours une valeur. Les saisies correctes produisent des valeurs comme `Age 24` ou `Age 39`, tandis que les saisies invalides produisent une valeur `InvalidInput`. Nous pouvons *pattern matcher* ces valeurs afin de nous assurer que l'ensemble des cas sont gérés. Pas de plantage !
+Quelle que soit la valeur de saisie passée à la fonction `toAge`, elle produira toujours une valeur. Les saisies correctes produisent des valeurs comme `Age 24` ou `Age 39`, tandis que les saisies invalides produisent une valeur `InvalidInput`. Nous pouvons [*pattern matcher*](/types/pattern_matching.html) ces valeurs afin de nous assurer que l'ensemble des cas sont gérés. Pas de plantage !
 
 Ce genre de situation arrive fréquemment ! Par exemple, peut-être voulez-vous transformer les valeurs d'un certain nombre de champs de saisie utilisateur en `BlogPost`, pour l'enregistrer et le partager. Mais que se passe t-il si l'auteur oublie le titre ? Ou si le contenu du billet est vide ? Nous pouvons tout à fait décrire ces différents scénarios avec un type dédié :
 

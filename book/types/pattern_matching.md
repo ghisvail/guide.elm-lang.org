@@ -1,4 +1,4 @@
-# Pattern Matching
+# Le Pattern Matching (ou *filtrage par motif*)
 
 Nous venons d'apprendre à créer des [types personnalisés](/types/custom_types.html) avec le mot-clé `type`. Notre exemple principal était un type `User` dans un salon de discussion :
 

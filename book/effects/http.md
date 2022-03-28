@@ -157,7 +157,7 @@ update msg model =
 
 En regardant la signature du type de la fonction, nous voyons que nous ne retournons pas seulement un modèle mis à jour. Nous produisons également une **commande** de ce que nous voulons qu'Elm fasse.
 
-En ce qui concerne l'implémentation, nous faisons du _pattern matching_ sur les messages comme habituellement. Quand un message `GotText` arrive, nous inspectons le `Result` de notre requête HTTP et mettons à jour notre modèle selon qu'il s'agisse d'un succès ou d'un échec. La nouveauté est que nous fournissons également une commande.
+En ce qui concerne l'implémentation, nous faisons du [_pattern matching_](/types/pattern_matching.html) sur les messages comme habituellement. Quand un message `GotText` arrive, nous inspectons le `Result` de notre requête HTTP et mettons à jour notre modèle selon qu'il s'agisse d'un succès ou d'un échec. La nouveauté est que nous fournissons également une commande.
 
 Ainsi, dans le cas où nous avons obtenu le texte complet avec succès, nous disons `Cmd.none` pour indiquer qu'il n'y a plus de travail à faire car nous avons déjà obtenu le texte complet !
 
