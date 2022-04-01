@@ -1,6 +1,6 @@
 # Applications web
 
-Jusqu’à présent, nous avons créé des programmes Elm avec `Browser.element`, qui permet de contrôler un élément HTML au sein d’une application plus grande. C'est très bien pour _commencer_ à utiliser Elm au travail (comme expliqué [ici - lien en anglais](https://elm-lang.org/blog/how-to-use-elm-at-work)), mais ensuite ? Comment généraliser l’utilisation de Elm ?
+Jusqu'à présent, nous avons créé des programmes Elm avec `Browser.element`, qui permet de contrôler un élément HTML au sein d'une application plus grande. C'est très bien pour _commencer_ à utiliser Elm au travail (comme expliqué [ici - lien en anglais](https://elm-lang.org/blog/how-to-use-elm-at-work)), mais ensuite ? Comment généraliser l'utilisation de Elm ?
 
 Dans ce chapitre, nous allons voir comment créer une application web avec tout un tas de pages qui s'intègrent parfaitement les unes aux autres. Mais, avant ça, voyons comment contrôler une seule page.
 
@@ -19,7 +19,7 @@ document :
   -> Program flags model msg
 ```
 
-Les arguments sont presque les mêmes que pour `Browser.element`, à l’exception de la fonction `view`. Plutôt que de retourner du `Html`, elle retourne maintenant un [`Document`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#Document) de ce type :
+Les arguments sont presque les mêmes que pour `Browser.element`, à l'exception de la fonction `view`. Plutôt que de retourner du `Html`, elle retourne maintenant un [`Document`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#Document) de ce type :
 
 ```elm
 type alias Document msg =
@@ -39,13 +39,13 @@ Le compilateur produit du HTML par défaut ; il suffit donc de compiler le code
 elm make src/Main.elm
 ```
 
-Le résultat sera un fichier nommé `index.html` que nous pourrons servir comme n’importe quel autre fichier HTML. Cette méthode fonctionne très bien ! On peut néanmoins obtenir un peu plus de flexibilité en (1) compilant Elm vers Javascript et (2) créant un fichier HTML personnalisé. Pour ce faire, on lance le compilateur comme ceci :
+Le résultat sera un fichier nommé `index.html` que nous pourrons servir comme n'importe quel autre fichier HTML. Cette méthode fonctionne très bien ! On peut néanmoins obtenir un peu plus de flexibilité en (1) compilant Elm vers Javascript et (2) créant un fichier HTML personnalisé. Pour ce faire, on lance le compilateur comme ceci :
 
 ```bash
 elm make src/Main.elm --output=main.js
 ```
 
-Cela va produire un fichier `main.js`, que l’on peut alors référencer dans un fichier HTML, comme ceci :
+Cela va produire un fichier `main.js`, que l'on peut alors référencer dans un fichier HTML, comme ceci :
 
 ```html
 <!DOCTYPE HTML>
@@ -62,7 +62,7 @@ Cela va produire un fichier `main.js`, que l’on peut alors référencer dans u
 </html>
 ```
 
-Ce fichier HTML est très simple. On charge ce dont on a besoin dans la balise `<head>` et on initialise le programme Elm dans le `<body>`. Le programme Elm s’occupe du reste et affiche l’application entière !
+Ce fichier HTML est très simple. On charge ce dont on a besoin dans la balise `<head>` et on initialise le programme Elm dans le `<body>`. Le programme Elm s'occupe du reste et affiche l'application entière !
 
 Quelle que soit la méthode choisie, on dispose maintenant d'un fichier HTML lisible par le navigateur. Pour donner accès à ce HTML, on peut utiliser des services gratuits comme [GitHub Pages](https://pages.github.com/) ou [Netlify](https://www.netlify.com/), ou bien monter son propre serveur sur un VPS avec un service comme [OVH](https://www.ovhcloud.com/fr/vps/) ou [Digital Ocean](https://m.do.co/c/c47faa1916d2). Peu importe, du moment qu'on peut rendre notre HTML accessible à un navigateur !
 
