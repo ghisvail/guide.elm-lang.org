@@ -5,11 +5,11 @@ Le paquet [`elm/html`](https://package.elm-lang.org/packages/elm/html/latest/) e
 
 ## Qu'est-ce que le DOM ?
 
-Lorsque vous créez un fichier HTML, vous écrivez du HTML directement comme ça :
+Lorsque vous créez un fichier HTML, vous écrivez du HTML directement comme ça :
 
 ```html
 <div>
-  <p>Parmi les alternatives aux chaises, on trouve :</p>
+  <p>Parmi les alternatives aux chaises, on trouve :</p>
   <ul>
     <li>seiza</li>
     <li>chabudai</li>
@@ -17,7 +17,7 @@ Lorsque vous créez un fichier HTML, vous écrivez du HTML directement comme ça
 </div>
 ```
 
-On peut y penser comme produisant cette structure DOM en coulisses:
+On peut y penser comme produisant cette structure DOM en coulisses :
 
 ![](diagrams/dom.svg)
 
@@ -26,13 +26,13 @@ Les boîtes noires représentent des objets DOM lourds avec des centaines d'attr
 
 ## Qu'est-ce que le _Virtual DOM_ ?
 
-Si vous créez un fichier Elm, vous utiliserez plutôt `elm/html` pour avoir ce genre de code :
+Si vous créez un fichier Elm, vous utiliserez plutôt `elm/html` pour avoir ce genre de code :
 
 ```elm
 viewChairAlts : List String -> Html msg
 viewChairAlts chairAlts =
   div []
-    [ p [] [ text "Parmi les alternatives aux chaises, on trouve :" ]
+    [ p [] [ text "Parmi les alternatives aux chaises, on trouve :" ]
     , ul [] (List.map viewAlt chairAlts)
     ]
 
@@ -42,7 +42,7 @@ viewAlt chairAlt =
 ```
 
 
-On peut voir `viewChairAlts ["seiza","chabudai"]` comme produisant en coulisse la structure de “DOM Virtuel“ suivante :
+On peut voir `viewChairAlts ["seiza","chabudai"]` comme produisant en coulisse la structure de “DOM Virtuel“ suivante :
 
 ![](diagrams/vdom.svg)
 
@@ -50,12 +50,12 @@ Les boîtes blanches représentent des objets JavaScript légers. Ils contiennen
 
 ## _Render_
 
-Si nous travaillons toujours avec ces nœuds virtuels en Elm, comment sont-ils convertis vers le DOM affiché à l'écran ? Au démarrage d'un programme Elm, il se passe les choses suivantes:
+Si nous travaillons toujours avec ces nœuds virtuels en Elm, comment sont-ils convertis vers le DOM affiché à l'écran ? Au démarrage d'un programme Elm, il se passe les choses suivantes :
 
 - appel à `init` pour avoir le `Model` initial,
 - appel à `view` pour avoir les nœuds virtuels initiaux.
 
-Maintenant que nous avons les nœuds virtuels, on en produit une réplique exacte dans le DOM réel:
+Maintenant que nous avons les nœuds virtuels, on en produit une réplique exacte dans le DOM réel :
 
 ![](diagrams/render.svg)
 
@@ -70,7 +70,7 @@ Supposons par exemple qu'une nouvelle alternative aux chaises soit listée dans 
 
 ![](diagrams/diff.svg)
 
-Elm a remarqué qu'un troisième `li` a été ajouté. Je l'ai marqué en vert. Elm sait maintenant exactement comment modifier le DOM réel pour le faire correspondre. Il faut juste insérer ce nouveau `li` :
+Elm a remarqué qu'un troisième `li` a été ajouté. Je l'ai marqué en vert. Elm sait maintenant exactement comment modifier le DOM réel pour le faire correspondre. Il faut juste insérer ce nouveau `li` :
 
 ![](diagrams/patch.svg)
 
@@ -81,21 +81,21 @@ Mais peut-on faire encore moins de calculs?
 
 ## `Html.Lazy`
 
-Le module [`Html.Lazy`](https://package.elm-lang.org/packages/elm/html/latest/Html-Lazy/) permet de ne même pas construire les nœuds virtuels ! L'idée principale est la fonction `lazy` (NdT: _"lazy"_ signifie "paresseux" en anglais) :
+Le module [`Html.Lazy`](https://package.elm-lang.org/packages/elm/html/latest/Html-Lazy/) permet de ne même pas construire les nœuds virtuels ! L'idée principale est la fonction `lazy` (NdT : _"lazy"_ signifie "paresseux" en anglais) :
 
 ```elm
 lazy : (a -> Html msg) -> a -> Html msg
 ```
 
-Revenons sur notre exemple de chaises, on avait appelé `viewChairAlts ["seiza","chabudai"]`, mais nous aurions pu appeler `lazy viewChairAlts ["seiza","chabudai"]` à la place. La version paresseuse alloue alors un seul nœud “paresseux“ :
+Revenons sur notre exemple de chaises, on avait appelé `viewChairAlts ["seiza","chabudai"]`, mais nous aurions pu appeler `lazy viewChairAlts ["seiza","chabudai"]` à la place. La version paresseuse alloue alors un seul nœud “paresseux“ :
 
 ![](diagrams/lazy.svg)
 
 Le nœud garde juste une référence vers la fonction et les arguments. Elm peut recombiner la fonction et les arguments pour générer toute la structure si nécessaire, mais ce n'est pas toujours nécessaire !
 
-Un des trucs cool avec Elm est cette garantie des fonctions: “même entrée, même sortie“. Donc à chaque fois qu'on rencontre deux nœuds “paresseux“ dans le calcul du _diff_ des nœuds virtuels, on se demande: la fonction est-elle la même ? les arguments sont-ils les mêmes ? S'ils sont tous identiques, on sait que les nœuds virtuels résultants seront également les mêmes ! **Donc on peut entièrement économiser la construction des nœuds virtuels !** Si l'un d'eux a changé, on peut construire le nœud virtuel et faire un _diff_ normal.
+Un des trucs cool avec Elm est cette garantie des fonctions : “même entrée, même sortie“. Donc à chaque fois qu'on rencontre deux nœuds “paresseux“ dans le calcul du _diff_ des nœuds virtuels, on se demande : la fonction est-elle la même ? les arguments sont-ils les mêmes ? S'ils sont tous identiques, on sait que les nœuds virtuels résultants seront également les mêmes ! **Donc on peut entièrement économiser la construction des nœuds virtuels !** Si l'un d'eux a changé, on peut construire le nœud virtuel et faire un _diff_ normal.
 
-> **Note:** à quelle condition deux valeurs sont-elles “les mêmes“? Pour optimiser les performances, on utilise l'opérateur `===` de JavaScript en coulisses :
+> **Note :** à quelle condition deux valeurs sont-elles “les mêmes“? Pour optimiser les performances, on utilise l'opérateur `===` de JavaScript en coulisses :
 >
 > - L'égalité structurelle est utilisée pour `Int`, `Float`, `String`, `Char` et `Bool`.
 > - L'égalité référentielle est utilisée pour les _records_, listes, _custom types_, dictionnaires, etc.
@@ -107,7 +107,7 @@ Un des trucs cool avec Elm est cette garantie des fonctions: “même entrée, m
 
 Le lieu idéal pour utiliser un nœud paresseux est à la racine de votre application. De nombreuses applications ont plusieurs régions visuelles distinctes comme des _headers_, _sidebars_, résultats de recherche, etc. Et quand on change une région, on change rarement les autres. Cela appelle naturellement l'utilisation de `lazy` !
 
-Par exemple, dans [mon implémentation de TodoMVC](https://github.com/evancz/elm-todomvc/), la fonction `view` est définie par:
+Par exemple, dans [mon implémentation de TodoMVC](https://github.com/evancz/elm-todomvc/), la fonction `view` est définie par :
 
 ```elm
 view : Model -> Html Msg
