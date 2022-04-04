@@ -8,8 +8,9 @@
     "honkit": "^3.7.1"
   },
   "scripts": {
+    "link-all": "npm link gitbook-plugin-elm-repl honkit-plugin-french-typography",
     "build": "honkit build",
-    "deploy": "npm link gitbook-plugin-elm-repl honkit-plugin-french-typography && npm run build && gh-pages -d _book",
-    "serve": "honkit serve"
+    "deploy": "npm run link-all && npm run build && gh-pages -d _book",
+    "serve": "npm run link-all && honkit serve"
   }
 }
