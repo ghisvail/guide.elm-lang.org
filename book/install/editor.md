@@ -6,7 +6,7 @@ La première étape est d'installer et configurer un éditeur de code pour gére
 
 Il y a beaucoup d'extensions et de plugins maintenus par les membres de la communauté pour un [large éventail d'éditeurs](https://github.com/elm/editor-plugins).
 
-C'est parfois compliqué de configurer un éditeur de texte, aussi dans le cadre de ce guide, nous allons prendre *Sublime Text* pour exemple et voir comment le configurer. Cela pourra s'avérer utile si vous débutez en programmation, et présentera aux plus aguerris une solution alternative.
+Configurer un éditeur de texte peut parfois s'avérer un peu compliqué… voyons comment le faire pour *Sublime Text* : cela pourra s'avérer utile si vous débutez en programmation, et présentera aux plus aguerris une solution alternative.
 
 
 ## Sublime Text
@@ -22,4 +22,4 @@ C'est parfois compliqué de configurer un éditeur de texte, aussi dans le cadre
 Ceci fait, vous devriez pouvoir ouvrir les fichiers Elm en bénéficiant de la coloration syntaxique. Les mot-cés comme `import` et `type` devrait être colorisés, facilitant la lecture du code.
 
 
-> **Note :** Il y a d'autre possibilités ! Les membres de la communauté ont créé des extensions pour Atom, Emacs, IntelliJ, Vim, VS Code, et plein d'autres. Nous essayons d'en garder à jour une liste exhaustive sur [cette page](https://github.com/elm/editor-plugins) !
+> **Note :** Il y a d'autres possibilités ! Les membres de la communauté ont créé des extensions pour Atom, Emacs, IntelliJ, Vim, VS Code, et plein d'autres. Nous essayons d'en garder à jour une liste exhaustive sur [cette page](https://github.com/elm/editor-plugins) !
