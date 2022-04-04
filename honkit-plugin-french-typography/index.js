@@ -1,8 +1,8 @@
 module.exports = {
   // Map of hooks
   hooks: {
-    page: function (page) {
-      page.content = page.content.replace(' ', '&nbsp;');
+    "page:before": function (page) {
+      page.content = page.content.replace(/ /g, "&nbsp;");
       return page;
     },
   },
