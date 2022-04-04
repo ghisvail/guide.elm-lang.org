@@ -3,7 +3,7 @@
   "description": "Apprenez les fondamentaux de la programmation en Elm, construisez des applications Web et découvrez la programmation fonctionnelle.",
   "author": "Evan Czaplicki",
   "root": "book",
-  "plugins": ["elm-repl", "bulk-redirect", "-sharing"],
+  "plugins": ["elm-repl", "bulk-redirect", "-sharing", "french-typography"],
   "pluginsConfig": {
     "bulk-redirect": {
       "basepath": "/",

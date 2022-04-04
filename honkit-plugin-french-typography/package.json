@@ -1,0 +1,8 @@
+{
+  "name": "honkit-plugin-french-typography",
+  "version": "0.0.1",
+  "description": "Plugin to apply french typography rules",
+  "engines": {
+    "honkit": ">1.x.x"
+  }
+}

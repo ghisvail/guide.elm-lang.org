@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "honkit build",
-    "deploy": "npm link gitbook-plugin-elm-repl && npm run build && gh-pages -d _book",
+    "deploy": "npm link gitbook-plugin-elm-repl && npm link honkit-plugin-french-typography && npm run build && gh-pages -d _book",
     "serve": "honkit serve"
   }
 }
