@@ -14,8 +14,7 @@ set -e
 ## BUILD BOOK
 
 npm install
-npm link gitbook-plugin-elm-repl
-npm link honkit-plugin-french-typography
+npm link gitbook-plugin-elm-repl honkit-plugin-french-typography
 npm run build
 
 
