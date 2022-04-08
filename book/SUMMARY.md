@@ -1,7 +1,7 @@
-# Summary
+# Table des matières
 
-* [Introduction](README.md)
-* [Bases du langage](bases_du_langage.md)
+* [Une introduction à Elm](README.md)
+* [Bases du langage](core_langage.md)
 * [L'Architecture Elm](architecture/README.md)
    * [Boutons](architecture/buttons.md)
    * [Champs texte](architecture/text_fields.md)
