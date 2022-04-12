@@ -1,0 +1,1006 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulaires · Une introduction à Elm</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.1">
+        <meta name="author" content="Evan Czaplicki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../types/" />
+    
+    
+    <link rel="prev" href="text_fields.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bases_du_langage.html">
+            
+                <a href="../bases_du_langage.html">
+            
+                    
+                    Bases du langage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    L'Architecture Elm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="buttons.html">
+            
+                <a href="buttons.html">
+            
+                    
+                    Boutons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="text_fields.html">
+            
+                <a href="text_fields.html">
+            
+                    
+                    Champs texte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="forms.html">
+            
+                <a href="forms.html">
+            
+                    
+                    Formulaires
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../types/">
+            
+                <a href="../types/">
+            
+                    
+                    Les types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../types/reading_types.html">
+            
+                <a href="../types/reading_types.html">
+            
+                    
+                    Lire les types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../types/type_aliases.html">
+            
+                <a href="../types/type_aliases.html">
+            
+                    
+                    Les alias de type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../types/custom_types.html">
+            
+                <a href="../types/custom_types.html">
+            
+                    
+                    Types personnalisés
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../types/pattern_matching.html">
+            
+                <a href="../types/pattern_matching.html">
+            
+                    
+                    Pattern Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../error_handling/">
+            
+                <a href="../error_handling/">
+            
+                    
+                    Gestion d'erreur
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../error_handling/maybe.html">
+            
+                <a href="../error_handling/maybe.html">
+            
+                    
+                    Maybe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../error_handling/result.html">
+            
+                <a href="../error_handling/result.html">
+            
+                    
+                    Result
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../effects/">
+            
+                <a href="../effects/">
+            
+                    
+                    Commandes et Souscriptions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../effects/http.html">
+            
+                <a href="../effects/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../effects/json.html">
+            
+                <a href="../effects/json.html">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../effects/random.html">
+            
+                <a href="../effects/random.html">
+            
+                    
+                    Random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../effects/time.html">
+            
+                <a href="../effects/time.html">
+            
+                    
+                    Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../install/">
+            
+                <a href="../install/">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../install/editor.html">
+            
+                <a href="../install/editor.html">
+            
+                    
+                    Éditeur de code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../install/elm.html">
+            
+                <a href="../install/elm.html">
+            
+                    
+                    Elm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../interop/">
+            
+                <a href="../interop/">
+            
+                    
+                    Interopérabilité avec JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../interop/flags.html">
+            
+                <a href="../interop/flags.html">
+            
+                    
+                    Flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../interop/ports.html">
+            
+                <a href="../interop/ports.html">
+            
+                    
+                    Ports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../interop/custom_elements.html">
+            
+                <a href="../interop/custom_elements.html">
+            
+                    
+                    Custom Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../interop/limits.html">
+            
+                <a href="../interop/limits.html">
+            
+                    
+                    Limites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../webapps/">
+            
+                <a href="../webapps/">
+            
+                    
+                    Applications web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../webapps/navigation.html">
+            
+                <a href="../webapps/navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../webapps/url_parsing.html">
+            
+                <a href="../webapps/url_parsing.html">
+            
+                    
+                    Parsing d'URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../webapps/modules.html">
+            
+                <a href="../webapps/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../webapps/structure.html">
+            
+                <a href="../webapps/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../optimization/">
+            
+                <a href="../optimization/">
+            
+                    
+                    Optimisation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../optimization/lazy.html">
+            
+                <a href="../optimization/lazy.html">
+            
+                    
+                    Html.lazy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../optimization/keyed.html">
+            
+                <a href="../optimization/keyed.html">
+            
+                    
+                    Html.keyed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../optimization/asset_size.html">
+            
+                <a href="../optimization/asset_size.html">
+            
+                    
+                    Minification
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../next_steps.html">
+            
+                <a href="../next_steps.html">
+            
+                    
+                    Prochaines étapes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Annexes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../appendix/types_as_sets.html">
+            
+                <a href="../appendix/types_as_sets.html">
+            
+                    
+                    Les types en tant qu'ensembles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../appendix/types_as_bits.html">
+            
+                <a href="../appendix/types_as_bits.html">
+            
+                    
+                    Les types en tant que bits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../appendix/function_types.html">
+            
+                <a href="../appendix/function_types.html">
+            
+                    
+                    Types de fonctions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Formulaires</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="formulaires">Formulaires</h1>
+<p>Maintenant, construisons un formulaire basique comportant des champs pour le nom, le mot de passe et la vérification du mot de passe. Nous implémenterons une étape de validation qui vérifiera que les mots de passe saisis sont identiques.</p>
+<p>Le code du programme est disponible ci-dessous. Vous pouvez cliquer sur le bouton bleu &quot;Éditer&quot; pour le modifier avec l&apos;éditeur en ligne. Essayez d&apos;introduire une coquille pour afficher des messages d&apos;erreur. Par exemple, en saisissant incorrectement le champ <code>password</code> ou la fonction <code>placeholder</code>. <strong>Allez-y, cliquez sur le bouton bleu !</strong></p>
+<div class="edit-link"><a href="https://elm-lang.org/examples/forms" target="_blank">Edit</a></div>
+
+<pre><code class="lang-elm"><span class="hljs-keyword">import</span> Browser
+<span class="hljs-keyword">import</span> Html <span class="hljs-keyword">exposing</span> (..)
+<span class="hljs-keyword">import</span> Html.Attributes <span class="hljs-keyword">exposing</span> (..)
+<span class="hljs-keyword">import</span> Html.Events <span class="hljs-keyword">exposing</span> (onInput)
+
+
+
+<span class="hljs-comment">-- MAIN</span>
+
+
+<span class="hljs-title">main</span> =
+  <span class="hljs-type">Browser</span>.sandbox { init = init, update = update, view = view }
+
+
+
+<span class="hljs-comment">-- MODEL</span>
+
+
+<span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> <span class="hljs-type">Model</span> =
+  { name : <span class="hljs-type">String</span>
+  , password : <span class="hljs-type">String</span>
+  , passwordAgain : <span class="hljs-type">String</span>
+  }
+
+
+<span class="hljs-title">init</span> : <span class="hljs-type">Model</span>
+<span class="hljs-title">init</span> =
+  <span class="hljs-type">Model</span> <span class="hljs-string">&quot;&quot;</span> <span class="hljs-string">&quot;&quot;</span> <span class="hljs-string">&quot;&quot;</span>
+
+
+
+<span class="hljs-comment">-- UPDATE</span>
+
+
+<span class="hljs-keyword">type</span> <span class="hljs-type">Msg</span>
+  = <span class="hljs-type">Name</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">Password</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">PasswordAgain</span> <span class="hljs-type">String</span>
+
+
+<span class="hljs-title">update</span> : <span class="hljs-type">Msg</span> -&gt; <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Model</span>
+<span class="hljs-title">update</span> msg model =
+  <span class="hljs-keyword">case</span> msg <span class="hljs-keyword">of</span>
+    <span class="hljs-type">Name</span> name -&gt;
+      { model | name = name }
+
+    <span class="hljs-type">Password</span> password -&gt;
+      { model | password = password }
+
+    <span class="hljs-type">PasswordAgain</span> password -&gt;
+      { model | passwordAgain = password }
+
+
+
+<span class="hljs-comment">-- VIEW</span>
+
+
+<span class="hljs-title">view</span> : <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Html</span> <span class="hljs-type">Msg</span>
+<span class="hljs-title">view</span> model =
+  div []
+    [ viewInput <span class="hljs-string">&quot;text&quot;</span> <span class="hljs-string">&quot;Name&quot;</span> model.name <span class="hljs-type">Name</span>
+    , viewInput <span class="hljs-string">&quot;password&quot;</span> <span class="hljs-string">&quot;Password&quot;</span> model.password <span class="hljs-type">Password</span>
+    , viewInput <span class="hljs-string">&quot;password&quot;</span> <span class="hljs-string">&quot;Re-enter Password&quot;</span> model.passwordAgain <span class="hljs-type">PasswordAgain</span>
+    , viewValidation model
+    ]
+
+
+<span class="hljs-title">viewInput</span> : <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; (<span class="hljs-type">String</span> -&gt; msg) -&gt; <span class="hljs-type">Html</span> msg
+<span class="hljs-title">viewInput</span> t p v toMsg =
+  input [ type_ t, placeholder p, value v, onInput toMsg ] []
+
+
+<span class="hljs-title">viewValidation</span> : <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Html</span> msg
+<span class="hljs-title">viewValidation</span> model =
+  <span class="hljs-keyword">if</span> model.password == model.passwordAgain <span class="hljs-keyword">then</span>
+    div [ style <span class="hljs-string">&quot;color&quot;</span> <span class="hljs-string">&quot;green&quot;</span> ] [ text <span class="hljs-string">&quot;OK&quot;</span> ]
+  <span class="hljs-keyword">else</span>
+    div [ style <span class="hljs-string">&quot;color&quot;</span> <span class="hljs-string">&quot;red&quot;</span> ] [ text <span class="hljs-string">&quot;Passwords do not match!&quot;</span> ]
+</code></pre>
+<p>Ce programme est similaire à celui sur les <a href="text_fields.html">zones de texte</a> mais avec plus de champs.</p>
+<h1 id="model">Model</h1>
+<p>Commençons par le modèle. Sachant qu&apos;il y aura trois champs textuels, nous pouvons définir :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> <span class="hljs-type">Model</span> =
+  { name : <span class="hljs-type">String</span>
+  , password : <span class="hljs-type">String</span>
+  , passwordAgain : <span class="hljs-type">String</span>
+  }
+</code></pre>
+<p>Il est préférable de démarrer avec un modèle minimal, même s&apos;il ne contient qu&apos;un seul champ, suivi de l&apos;écriture des fonctions <code>view</code> et <code>update</code>. Ces étapes révèlent souvent les modifications supplémentaires à apporter au modèle. Cette construction progressive du modèle permet d&apos;avoir un programme fonctionnel tout au long du développement. Toutes les caractéristiques ne sont pas encore présentes, mais chaque chose en son temps.</p>
+<h2 id="update">Update</h2>
+<p>Nous avons souvent une bonne intuition de ce à quoi la mise à jour du modèle va ressembler. Nous aurons besoin de changer les valeurs des trois champs du modèle, ce qui nécessite la définition d&apos;un message pour chacun.</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">Msg</span>
+  = <span class="hljs-type">Name</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">Password</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">PasswordAgain</span> <span class="hljs-type">String</span>
+</code></pre>
+<p>La fonction <code>update</code> doit donc traiter chacune des trois variantes du message :</p>
+<pre><code class="lang-elm"><span class="hljs-title">update</span> : <span class="hljs-type">Msg</span> -&gt; <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Model</span>
+<span class="hljs-title">update</span> msg model =
+  <span class="hljs-keyword">case</span> msg <span class="hljs-keyword">of</span>
+    <span class="hljs-type">Name</span> name -&gt;
+      { model | name = name }
+
+    <span class="hljs-type">Password</span> password -&gt;
+      { model | password = password }
+
+    <span class="hljs-type">PasswordAgain</span> password -&gt;
+      { model | passwordAgain = password }
+</code></pre>
+<p>Chaque cas utilise la syntaxe de modification d&apos;enregistrement pour transformer le champ du modèle concerné. Cela reste semblable à d&apos;autres exemples vus précédemment, mais avec plus de cas.</p>
+<p>Nous ferons plus dans l&apos;originalité du coté de la fonction <code>view</code>.</p>
+<h2 id="view">View</h2>
+<p>Notre fonction <code>view</code> utilise des <strong>fonctions utilitaires</strong> pour une meilleure organisation du code :</p>
+<pre><code class="lang-elm"><span class="hljs-title">view</span> : <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Html</span> <span class="hljs-type">Msg</span>
+<span class="hljs-title">view</span> model =
+  div []
+    [ viewInput <span class="hljs-string">&quot;text&quot;</span> <span class="hljs-string">&quot;Name&quot;</span> model.name <span class="hljs-type">Name</span>
+    , viewInput <span class="hljs-string">&quot;password&quot;</span> <span class="hljs-string">&quot;Password&quot;</span> model.password <span class="hljs-type">Password</span>
+    , viewInput <span class="hljs-string">&quot;password&quot;</span> <span class="hljs-string">&quot;Re-enter Password&quot;</span> model.passwordAgain <span class="hljs-type">PasswordAgain</span>
+    , viewValidation model
+    ]
+</code></pre>
+<p>Dans les exemples précédents, nous utilisions <code>input</code> et <code>div</code> directement. Pourquoi faire différemment cette fois ?</p>
+<p>Une caractéristique importante du HTML en Elm est que <code>input</code> et <code>div</code> sont de simples fonctions. Chacune prend (1) une liste de champs et (2) une liste de nœuds enfants. <strong>Comme nous manipulons des fonctions Elm, nous pouvons utiliser toute la puissance de Elm à notre disposition pour construire nos vues !</strong> Notamment, nous pouvons factoriser le code répétitif dans des fonctions séparées, comme nous allons le voir par la suite.</p>
+<p>Notre fonction <code>view</code> procède à trois appels de la fonction <code>viewInput</code> :</p>
+<pre><code class="lang-elm"><span class="hljs-title">viewInput</span> : <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; (<span class="hljs-type">String</span> -&gt; msg) -&gt; <span class="hljs-type">Html</span> msg
+<span class="hljs-title">viewInput</span> t p v toMsg =
+  input [ type_ t, placeholder p, value v, onInput toMsg ] []
+</code></pre>
+<p>Un appel tel que <code>viewInput &quot;text&quot; &quot;Name&quot; &quot;Bill&quot; Name</code> en Elm produira la valeur HTML <code>&lt;input type=&quot;text&quot; placeholder=&quot;Name&quot; value=&quot;Bill&quot;&gt;</code> une fois montré à l&apos;écran.</p>
+<p>Le quatrième appel à <code>viewValidation</code> est intéressant :</p>
+<pre><code class="lang-elm"><span class="hljs-title">viewValidation</span> : <span class="hljs-type">Model</span> -&gt; <span class="hljs-type">Html</span> msg
+<span class="hljs-title">viewValidation</span> model =
+  <span class="hljs-keyword">if</span> model.password == model.passwordAgain <span class="hljs-keyword">then</span>
+    div [ style <span class="hljs-string">&quot;color&quot;</span> <span class="hljs-string">&quot;green&quot;</span> ] [ text <span class="hljs-string">&quot;OK&quot;</span> ]
+  <span class="hljs-keyword">else</span>
+    div [ style <span class="hljs-string">&quot;color&quot;</span> <span class="hljs-string">&quot;red&quot;</span> ] [ text <span class="hljs-string">&quot;Passwords do not match!&quot;</span> ]
+</code></pre>
+<p>Cette fonction compare les deux mots de passe saisis. S&apos;ils correspondent, un message de confirmation s&apos;affiche en vert. S&apos;ils diffèrent, un message d&apos;erreur s&apos;affiche en rouge.</p>
+<p>Ces fonctions utilitaires montrent l&apos;avantage d&apos;avoir une bibliothèque HTML écrite en Elm. Il est possible d&apos;intégrer ce code directement dans la fonction <code>view</code>, mais écrire des fonctions réutilisables est normal en Elm, même pour la partie visuelle. Si le code devient difficile à comprendre, peut-être vaut-il mieux le décomposer en plusieurs fonctions utilitaires.</p>
+<blockquote>
+<p><strong>Exercices:</strong> Regardez cet <a href="https://elm-lang.org/examples/forms" target="_blank">exemple</a> sur l&apos;éditeur en ligne. Essayez d&apos;ajouter les caractéristiques suivantes à la fonction utilitaire <code>viewValidation</code>:</p>
+<ul>
+<li>Vérifiez que le mot de passe saisi contient plus de 8 caractères.</li>
+<li>Assurez-vous que le mot de passe contienne un mélange de caractères majuscules, minuscules, et numériques.</li>
+</ul>
+<p>Utilisez les fonctionnalités du module <a href="https://package.elm-lang.org/packages/elm/core/latest/String" target="_blank"><code>String</code></a> pour résoudre ces exercices !</p>
+<p><strong>Attention:</strong> Plus de connaissances sont nécessaires avant de commencer à envoyer des requêtes HTTP. Pour plus de facilité, nous vous recommandons de continuer la lecture jusqu&apos;à la section HTTP avant de vous y essayer.</p>
+<p><strong>Note:</strong> Aucune tentative d&apos;implémentation d&apos;une bibliothèque de validation générique ne s&apos;est avérée concluante pour le moment. La logique de validation est souvent mieux exprimée par des fonctions Elm classiques adaptées au problème traité et retournant un résultat de type <code>Bool</code> ou <code>Maybe</code>. Commencez par là avant de choisir une solution plus complexe.</p>
+</blockquote>
+<hr>
+<p><a href="https://github.com/elm-france/guide.elm-lang.org/tree/master/book/architecture/forms.md" target="_blank">Source de cette page</a> —
+<a href="https://github.com/elm-france/guide.elm-lang.org/edit/master/book/architecture/forms.md" target="_blank">Suggérer une modification</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="text_fields.html" class="navigation navigation-prev " aria-label="Previous page: Champs texte">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../types/" class="navigation navigation-next " aria-label="Next page: Les types">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Formulaires","level":"1.3.3","depth":2,"next":{"title":"Les types","level":"1.4","depth":1,"path":"types/README.md","ref":"types/README.md","articles":[{"title":"Lire les types","level":"1.4.1","depth":2,"path":"types/reading_types.md","ref":"types/reading_types.md","articles":[]},{"title":"Les alias de type","level":"1.4.2","depth":2,"path":"types/type_aliases.md","ref":"types/type_aliases.md","articles":[]},{"title":"Types personnalisés","level":"1.4.3","depth":2,"path":"types/custom_types.md","ref":"types/custom_types.md","articles":[]},{"title":"Pattern Matching","level":"1.4.4","depth":2,"path":"types/pattern_matching.md","ref":"types/pattern_matching.md","articles":[]}]},"previous":{"title":"Champs texte","level":"1.3.2","depth":2,"path":"architecture/text_fields.md","ref":"architecture/text_fields.md","articles":[]},"dir":"ltr"},"config":{"plugins":["elm-repl","bulk-redirect","-sharing","french-typography"],"root":"book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"elm-repl":{},"french-typography":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Evan Czaplicki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Une introduction à Elm","gitbook":"*","description":"Apprenez les fondamentaux de la programmation en Elm, construisez des applications Web et découvrez la programmation fonctionnelle."},"file":{"path":"architecture/forms.md","mtime":"2022-04-12T18:31:48.390Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-04-12T18:32:06.846Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-elm-repl/repl.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

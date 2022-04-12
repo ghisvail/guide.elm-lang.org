@@ -1,0 +1,941 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Types personnalisés · Une introduction à Elm</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.1">
+        <meta name="author" content="Evan Czaplicki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pattern_matching.html" />
+    
+    
+    <link rel="prev" href="type_aliases.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bases_du_langage.html">
+            
+                <a href="../bases_du_langage.html">
+            
+                    
+                    Bases du langage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../architecture/">
+            
+                <a href="../architecture/">
+            
+                    
+                    L'Architecture Elm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../architecture/buttons.html">
+            
+                <a href="../architecture/buttons.html">
+            
+                    
+                    Boutons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../architecture/text_fields.html">
+            
+                <a href="../architecture/text_fields.html">
+            
+                    
+                    Champs texte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../architecture/forms.html">
+            
+                <a href="../architecture/forms.html">
+            
+                    
+                    Formulaires
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Les types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="reading_types.html">
+            
+                <a href="reading_types.html">
+            
+                    
+                    Lire les types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="type_aliases.html">
+            
+                <a href="type_aliases.html">
+            
+                    
+                    Les alias de type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="custom_types.html">
+            
+                <a href="custom_types.html">
+            
+                    
+                    Types personnalisés
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="pattern_matching.html">
+            
+                <a href="pattern_matching.html">
+            
+                    
+                    Pattern Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../error_handling/">
+            
+                <a href="../error_handling/">
+            
+                    
+                    Gestion d'erreur
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../error_handling/maybe.html">
+            
+                <a href="../error_handling/maybe.html">
+            
+                    
+                    Maybe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../error_handling/result.html">
+            
+                <a href="../error_handling/result.html">
+            
+                    
+                    Result
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../effects/">
+            
+                <a href="../effects/">
+            
+                    
+                    Commandes et Souscriptions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../effects/http.html">
+            
+                <a href="../effects/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../effects/json.html">
+            
+                <a href="../effects/json.html">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../effects/random.html">
+            
+                <a href="../effects/random.html">
+            
+                    
+                    Random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../effects/time.html">
+            
+                <a href="../effects/time.html">
+            
+                    
+                    Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../install/">
+            
+                <a href="../install/">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../install/editor.html">
+            
+                <a href="../install/editor.html">
+            
+                    
+                    Éditeur de code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../install/elm.html">
+            
+                <a href="../install/elm.html">
+            
+                    
+                    Elm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../interop/">
+            
+                <a href="../interop/">
+            
+                    
+                    Interopérabilité avec JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../interop/flags.html">
+            
+                <a href="../interop/flags.html">
+            
+                    
+                    Flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../interop/ports.html">
+            
+                <a href="../interop/ports.html">
+            
+                    
+                    Ports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../interop/custom_elements.html">
+            
+                <a href="../interop/custom_elements.html">
+            
+                    
+                    Custom Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../interop/limits.html">
+            
+                <a href="../interop/limits.html">
+            
+                    
+                    Limites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../webapps/">
+            
+                <a href="../webapps/">
+            
+                    
+                    Applications web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../webapps/navigation.html">
+            
+                <a href="../webapps/navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../webapps/url_parsing.html">
+            
+                <a href="../webapps/url_parsing.html">
+            
+                    
+                    Parsing d'URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../webapps/modules.html">
+            
+                <a href="../webapps/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../webapps/structure.html">
+            
+                <a href="../webapps/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../optimization/">
+            
+                <a href="../optimization/">
+            
+                    
+                    Optimisation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../optimization/lazy.html">
+            
+                <a href="../optimization/lazy.html">
+            
+                    
+                    Html.lazy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../optimization/keyed.html">
+            
+                <a href="../optimization/keyed.html">
+            
+                    
+                    Html.keyed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../optimization/asset_size.html">
+            
+                <a href="../optimization/asset_size.html">
+            
+                    
+                    Minification
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../next_steps.html">
+            
+                <a href="../next_steps.html">
+            
+                    
+                    Prochaines étapes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Annexes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../appendix/types_as_sets.html">
+            
+                <a href="../appendix/types_as_sets.html">
+            
+                    
+                    Les types en tant qu'ensembles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../appendix/types_as_bits.html">
+            
+                <a href="../appendix/types_as_bits.html">
+            
+                    
+                    Les types en tant que bits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../appendix/function_types.html">
+            
+                <a href="../appendix/function_types.html">
+            
+                    
+                    Types de fonctions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Types personnalisés</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p><strong>Note :</strong> Les <em>types personnalisés</em> étaient auparavant appelés <em>union types</em> en Elm. D&apos;autres noms véhiculant le même concept issus d&apos;autres communautés sont <a href="https://en.wikipedia.org/wiki/Tagged_union" target="_blank"><em>tagged unions</em></a> et <a href="https://en.wikipedia.org/wiki/Algebraic_data_type" target="_blank"><em>ADTs</em></a>.</p>
+</blockquote>
+<h1 id="types-personnalisés">Types personnalisés</h1>
+<p>Jusqu&apos;ici nous avons vu quelques types comme <code>Bool</code>, <code>Int</code> et <code>String</code>. Mais comment créer nos <em>propres</em> types ?</p>
+<p>Imaginons un salon de discussion en ligne. Chaque usager a besoin d&apos;un identifiant, mais certains n&apos;ont pas créé de compte et fournissent simplement un identifiant à chaque fois qu&apos;ils se connectent.</p>
+<p>Nous pouvons décrire cette situation en définissant un type <code>UserStatus</code> listant toutes les variantes possibles :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">UserStatus</span> = <span class="hljs-type">Regular</span> | <span class="hljs-type">Visitor</span>
+</code></pre>
+<p>Le type <code>UserStatus</code> a deux <strong>variantes</strong>. Les usagers peuvent être <code>Regular</code> ou <code>Visitor</code>. Nous pouvons représenter nos usagers en utilisant un <em>record</em>, comme ceci :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">UserStatus</span>
+  = <span class="hljs-type">Regular</span>
+  | <span class="hljs-type">Visitor</span>
+
+<span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> <span class="hljs-type">User</span> =
+  { status : <span class="hljs-type">UserStatus</span>
+  , name : <span class="hljs-type">String</span>
+  }
+
+<span class="hljs-title">thomas</span> = { status = <span class="hljs-type">Regular</span>, name = <span class="hljs-string">&quot;Thomas&quot;</span> }
+<span class="hljs-title">kate95</span> = { status = <span class="hljs-type">Visitor</span>, name = <span class="hljs-string">&quot;kate95&quot;</span> }
+</code></pre>
+<p>De cette façon, nous pouvons déterminer si l&apos;usager dispose d&apos;un compte (<code>Regular</code>) ou non (<code>Visitor</code>). Ce n&apos;est pas trop compliqué, mais on peut rendre ça encore plus simple !</p>
+<p>Plutôt que de créer un type personnalisé <em>et</em> un alias de type, on peut représenter l&apos;ensemble au moyen <em>d&apos;un seul</em> type personnalisé. Les variantes <code>Regular</code> et <code>Visitor</code> se voient chacune associée à un identifiant de type <code>String</code> :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">User</span>
+  = <span class="hljs-type">Regular</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">Visitor</span> <span class="hljs-type">String</span>
+
+<span class="hljs-title">thomas</span> = <span class="hljs-type">Regular</span> <span class="hljs-string">&quot;Thomas&quot;</span>
+<span class="hljs-title">kate95</span> = <span class="hljs-type">Visitor</span> <span class="hljs-string">&quot;kate95&quot;</span>
+</code></pre>
+<p>La donnée étant attachée directement à la variante, il n&apos;y a même plus besoin de <em>record</em>.</p>
+<p>Un autre avantage de cette approche est que chaque variante peut avoir des données associées de types différents. Admettons qu&apos;on propose à nos usagers <code>Regular</code> d&apos;ajouter leur âge à la création de leur compte. Il n&apos;y a pas de moyen évident de modéliser ça avec un <em>record</em>, mais avec un type personnalisé, aucun problème. Ajoutons quelques données spécifiques à notre variante <code>Regular</code> :</p>
+<p><div class="elm-repl show-types">
+[
+  {
+    &quot;add-type&quot;: &quot;User&quot;,
+    &quot;input&quot;: &quot;type User\n  = Regular String Int\n  | Visitor String\n&quot;
+  },
+  {
+    &quot;input&quot;: &quot;Regular&quot;,
+    &quot;value&quot;: &quot;\u001b[36m&lt;function&gt;\u001b[0m&quot;,
+    &quot;type_&quot;: &quot;String -&gt; Int -&gt; User&quot;
+  },
+  {
+    &quot;input&quot;: &quot;Visitor&quot;,
+    &quot;value&quot;: &quot;\u001b[36m&lt;function&gt;\u001b[0m&quot;,
+    &quot;type_&quot;: &quot;String -&gt; User&quot;
+  },
+  {
+    &quot;input&quot;: &quot;Regular \&quot;Thomas\&quot; 44&quot;,
+    &quot;value&quot;: &quot;\u001b[96mRegular\u001b[0m \u001b[93m\&quot;Thomas\&quot;\u001b[0m \u001b[95m44\u001b[0m&quot;,
+    &quot;type_&quot;: &quot;User&quot;
+  },
+  {
+    &quot;input&quot;: &quot;Visitor \&quot;kate95\&quot;&quot;,
+    &quot;value&quot;: &quot;\u001b[96mVisitor\u001b[0m \u001b[93m\&quot;kate95\&quot;\u001b[0m&quot;,
+    &quot;type_&quot;: &quot;User&quot;
+  }
+]
+</div></p>
+<p>Essayez de définir un usager <code>Regular</code> avec son identifiant et son âge ⬆️</p>
+<p>Nous avons simplement ajouté l&apos;âge, mais les variantes d&apos;un type peuvent diverger de façon encore plus spectaculaire. Par exemple, nous pourrions ajouter la localisation des participants de type <code>Regular</code> pour leur proposer des salons régionalisés. Ou peut-être souhaitons-nous permettre l&apos;utilisation de notre salon de façon anonyme. Ajoutez une troisième variante <code>Anonymous</code>, afin d&apos;obtenir quelque chose de ce genre :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">User</span>
+  = <span class="hljs-type">Regular</span> <span class="hljs-type">String</span> <span class="hljs-type">Int</span> <span class="hljs-type">Location</span>
+  | <span class="hljs-type">Visitor</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">Anonymous</span>
+</code></pre>
+<p>Aucun souci ! Maintenant, voyons d&apos;autres exemples.</p>
+<h2 id="messages">Messages</h2>
+<p>Dans le chapitre abordant l&apos;<a href="../architecture">Architecture Elm</a>, nous avons vu quelques exemples de définition d&apos;un type <code>Msg</code>, très courant en Elm. Pour notre salon de discussion, on pourrait définir un type <code>Msg</code> comme celui-ci :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">Msg</span>
+  = <span class="hljs-type">PressedEnter</span>
+  | <span class="hljs-type">ChangedDraft</span> <span class="hljs-type">String</span>
+  | <span class="hljs-type">ReceivedMessage</span> { user : <span class="hljs-type">User</span>, message : <span class="hljs-type">String</span> }
+  | <span class="hljs-type">ClickedExit</span>
+</code></pre>
+<p>Nous avons quatre variantes. Deux d&apos;entre elles n&apos;ont aucune donnée associée, d&apos;autres en ont. Notez que <code>ReceivedMessage</code> dispose d&apos;un <em>record</em> associé : c&apos;est tout à fait valable ! On peut associer n&apos;importe quel type à une variante, ce qui permet de décrire les interactions applicatives de façon très précise.</p>
+<h2 id="modélisation">Modélisation</h2>
+<p>Les types personnalisés deviennent extrêmement puissants lorsqu&apos;on commence à modéliser les situations très précisément. Par exemple, si vous chargez des données, vous pourriez avoir envie de modéliser l&apos;état d&apos;attente ou les échecs avec un type personnalisé :</p>
+<pre><code class="lang-elm"><span class="hljs-keyword">type</span> <span class="hljs-type">Profile</span>
+  = <span class="hljs-type">Failure</span>
+  | <span class="hljs-type">Loading</span>
+  | <span class="hljs-type">Success</span> { name : <span class="hljs-type">String</span>, description : <span class="hljs-type">String</span> }
+</code></pre>
+<p>Ici on peut démarrer par <code>Loading</code> et transitionner vers <code>Failure</code> ou <code>Success</code> en fonction de ce qu&apos;il advient. Cela rend triviale l&apos;écriture d&apos;une fonction <code>view</code> qui affichera dans tous les cas quelque chose de pertinent en fonction de l&apos;état du chargement des données.</p>
+<p>Maintenant que nous savons créer des types personnalisés, la section suivante va nous montrer comment les utiliser !</p>
+<blockquote>
+<p><strong>Note : Les types personnalisés sont la fonctionnalité la plus importante de Elm.</strong> Ils apportent énormément de profondeur et de précision dans la modélisation des scénarios applicatifs. Nous avons essayé de détailler un peu de cette profondeur dans les sections <a href="../appendix/types_as_sets.html">Les types en tant qu&apos;ensembles</a> et <a href="../appendix/types_as_bits.html">Les types en tant que bits</a>. Nous espérons qu&apos;elles vous seront utiles !</p>
+</blockquote>
+<hr>
+<p><a href="https://github.com/elm-france/guide.elm-lang.org/tree/master/book/types/custom_types.md" target="_blank">Source de cette page</a> —
+<a href="https://github.com/elm-france/guide.elm-lang.org/edit/master/book/types/custom_types.md" target="_blank">Suggérer une modification</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="type_aliases.html" class="navigation navigation-prev " aria-label="Previous page: Les alias de type">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="pattern_matching.html" class="navigation navigation-next " aria-label="Next page: Pattern Matching">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Types personnalisés","level":"1.4.3","depth":2,"next":{"title":"Pattern Matching","level":"1.4.4","depth":2,"path":"types/pattern_matching.md","ref":"types/pattern_matching.md","articles":[]},"previous":{"title":"Les alias de type","level":"1.4.2","depth":2,"path":"types/type_aliases.md","ref":"types/type_aliases.md","articles":[]},"dir":"ltr"},"config":{"plugins":["elm-repl","bulk-redirect","-sharing","french-typography"],"root":"book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"elm-repl":{},"french-typography":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Evan Czaplicki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Une introduction à Elm","gitbook":"*","description":"Apprenez les fondamentaux de la programmation en Elm, construisez des applications Web et découvrez la programmation fonctionnelle."},"file":{"path":"types/custom_types.md","mtime":"2022-04-12T18:31:48.394Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-04-12T18:32:06.846Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-elm-repl/repl.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

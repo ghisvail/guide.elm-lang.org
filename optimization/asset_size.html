@@ -1,0 +1,901 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Minification · Une introduction à Elm</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.7.1">
+        <meta name="author" content="Evan Czaplicki">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../next_steps.html" />
+    
+    
+    <link rel="prev" href="keyed.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../bases_du_langage.html">
+            
+                <a href="../bases_du_langage.html">
+            
+                    
+                    Bases du langage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../architecture/">
+            
+                <a href="../architecture/">
+            
+                    
+                    L'Architecture Elm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../architecture/buttons.html">
+            
+                <a href="../architecture/buttons.html">
+            
+                    
+                    Boutons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../architecture/text_fields.html">
+            
+                <a href="../architecture/text_fields.html">
+            
+                    
+                    Champs texte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../architecture/forms.html">
+            
+                <a href="../architecture/forms.html">
+            
+                    
+                    Formulaires
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../types/">
+            
+                <a href="../types/">
+            
+                    
+                    Les types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../types/reading_types.html">
+            
+                <a href="../types/reading_types.html">
+            
+                    
+                    Lire les types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../types/type_aliases.html">
+            
+                <a href="../types/type_aliases.html">
+            
+                    
+                    Les alias de type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../types/custom_types.html">
+            
+                <a href="../types/custom_types.html">
+            
+                    
+                    Types personnalisés
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../types/pattern_matching.html">
+            
+                <a href="../types/pattern_matching.html">
+            
+                    
+                    Pattern Matching
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../error_handling/">
+            
+                <a href="../error_handling/">
+            
+                    
+                    Gestion d'erreur
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../error_handling/maybe.html">
+            
+                <a href="../error_handling/maybe.html">
+            
+                    
+                    Maybe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../error_handling/result.html">
+            
+                <a href="../error_handling/result.html">
+            
+                    
+                    Result
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../effects/">
+            
+                <a href="../effects/">
+            
+                    
+                    Commandes et Souscriptions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../effects/http.html">
+            
+                <a href="../effects/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../effects/json.html">
+            
+                <a href="../effects/json.html">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../effects/random.html">
+            
+                <a href="../effects/random.html">
+            
+                    
+                    Random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../effects/time.html">
+            
+                <a href="../effects/time.html">
+            
+                    
+                    Time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../install/">
+            
+                <a href="../install/">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../install/editor.html">
+            
+                <a href="../install/editor.html">
+            
+                    
+                    Éditeur de code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../install/elm.html">
+            
+                <a href="../install/elm.html">
+            
+                    
+                    Elm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../interop/">
+            
+                <a href="../interop/">
+            
+                    
+                    Interopérabilité avec JavaScript
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../interop/flags.html">
+            
+                <a href="../interop/flags.html">
+            
+                    
+                    Flags
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../interop/ports.html">
+            
+                <a href="../interop/ports.html">
+            
+                    
+                    Ports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../interop/custom_elements.html">
+            
+                <a href="../interop/custom_elements.html">
+            
+                    
+                    Custom Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../interop/limits.html">
+            
+                <a href="../interop/limits.html">
+            
+                    
+                    Limites
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../webapps/">
+            
+                <a href="../webapps/">
+            
+                    
+                    Applications web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../webapps/navigation.html">
+            
+                <a href="../webapps/navigation.html">
+            
+                    
+                    Navigation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../webapps/url_parsing.html">
+            
+                <a href="../webapps/url_parsing.html">
+            
+                    
+                    Parsing d'URL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../webapps/modules.html">
+            
+                <a href="../webapps/modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../webapps/structure.html">
+            
+                <a href="../webapps/structure.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Optimisation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="lazy.html">
+            
+                <a href="lazy.html">
+            
+                    
+                    Html.lazy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="keyed.html">
+            
+                <a href="keyed.html">
+            
+                    
+                    Html.keyed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.3" data-path="asset_size.html">
+            
+                <a href="asset_size.html">
+            
+                    
+                    Minification
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../next_steps.html">
+            
+                <a href="../next_steps.html">
+            
+                    
+                    Prochaines étapes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    Annexes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../appendix/types_as_sets.html">
+            
+                <a href="../appendix/types_as_sets.html">
+            
+                    
+                    Les types en tant qu'ensembles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../appendix/types_as_bits.html">
+            
+                <a href="../appendix/types_as_bits.html">
+            
+                    
+                    Les types en tant que bits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../appendix/function_types.html">
+            
+                <a href="../appendix/function_types.html">
+            
+                    
+                    Types de fonctions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Minification</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="taille-des-ressources">Taille des ressources</h1>
+<p>La seule chose plus lente que de manipuler le DOM est la communication entre serveurs, en particulier pour les usagers mobiles ou avec une connexion limitée. Vous pouvez passer du temps à optimiser votre code avec <code>Html.Lazy</code> et <code>Html.Keyed</code>, votre application restera aussi lente que son chargement.</p>
+<p>Celui-ci peut être améliorer grandement en transférant moins d&apos;octets. Par exemple, si la taille d&apos;une ressource de 122ko peut-être réduite à 9ko, alors son chargement sera accéléré! Ce genre de résultats peut être obtenu en utilisant les techniques suivantes :</p>
+<ul>
+<li><strong>Compilation.</strong> Le compilateur Elm peut réaliser des optimisations comme l&apos;élimination de code mort ou le renommage de champs. Il peut retirer le code non utilisé et raccourcir les noms de champs comme <code>userStatus</code> dans le code généré.</li>
+<li><strong>Minification.</strong> Dans l&apos;univers JavaScript, il existe des outils appelés &quot;minifiers&quot; qui réalisent des transformations diverses : ils raccourcissent des variables, génèrent du code en ligne, traduisent des instructions <code>if</code> en opérateur ternaire, ou encore convertissent <code>&apos;\u0041&apos;</code> en <code>&apos;A&apos;</code>. Tout ce qui peut économiser quelques octets!</li>
+<li><strong>Compression.</strong> Une fois le code raccourci au maximum, il est possible d&apos;utiliser un algorithme de compression comme gzip pour en réduire la taille. C&apos;est particulièrement efficace pour les mots-clés tels que <code>function</code> et <code>return</code> dont il est impossible de se débarrasser dans le code lui-même.</li>
+</ul>
+<p>Elm facilite la mise en place de tout ça dans votre projet, sans recours à un système de construction complexe. Il suffit de deux commandes depuis le terminal!</p>
+<h2 id="instructions">Instructions</h2>
+<p>La première étape consiste à compiler avec l&apos;option <code>--optimize</code>. C&apos;est elle qui réalise les optimisations comme le renommage de champs.</p>
+<p>La seconde étape est de minifier le code JavaScript produit. J’utilise <code>uglifyjs</code>, mais libre à vous d&apos;utiliser un autre outil. L&apos;intérêt d&apos;<code>uglifyjs</code> réside dans ses options spéciales. Celles-ci débloquent des optimisations d&apos;ordinaire peu fiables sur du code JavaScript standard, mais qui s&apos;avèrent très efficace sur le code généré par Elm grâce à sa conception.</p>
+<p>En combinant ces deux étapes, optimiser <code>src/Main.elm</code> revient à exécuter:</p>
+<pre><code class="lang-bash">elm make src/Main.elm --optimize --output=elm.js
+uglifyjs elm.js --compress <span class="hljs-string">&apos;pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe&apos;</span> | uglifyjs --mangle --output elm.min.js
+</code></pre>
+<p>En sortie, vous obtiendrez un fichier <code>elm.js</code> et un plus petit fichier <code>elm.min.js</code>!</p>
+<blockquote>
+<p><strong>Note 1:</strong> <code>uglifyjs</code> est exécuté deux fois ici. D&apos;abord avec l&apos;option <code>--compress</code>, puis avec l&apos;option <code>--mangle</code>. Sans cela, <code>uglifyjs</code> ignorera l&apos;option <code>pure_funcs</code>.</p>
+<p><strong>Note 2:</strong> Si <code>uglifyjs</code> n&apos;est pas disponible dans votre terminal, il est possible de l&apos;installer avec <code>npm install uglify-js --global</code>. Si <code>npm</code> n&apos;est pas non plus disponible, obtenez le avec <a href="https://nodejs.org/" target="_blank">nodejs</a>.</p>
+</blockquote>
+<h2 id="scripts">Scripts</h2>
+<p>Étant donné qu&apos;il est difficile de se rappeler toutes les options à utiliser pour <code>uglifyjs</code>, nous vous recommandons d&apos;écrire un script.</p>
+<p>Dans l&apos;hypothèse où nous voulons un script Bash qui produise les fichiers <code>elm.js</code> et <code>elm.min.js</code>, nous pouvons définir <code>optimize.sh</code> pour MacOS ou Linux comme ci-dessous :</p>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/sh</span>
+
+<span class="hljs-built_in">set</span> -e
+
+js=<span class="hljs-string">&quot;elm.js&quot;</span>
+min=<span class="hljs-string">&quot;elm.min.js&quot;</span>
+
+elm make --optimize --output=<span class="hljs-variable">$js</span> <span class="hljs-string">&quot;<span class="hljs-variable">$@</span>&quot;</span>
+
+uglifyjs <span class="hljs-variable">$js</span> --compress <span class="hljs-string">&apos;pure_funcs=[F2,F3,F4,F5,F6,F7,F8,F9,A2,A3,A4,A5,A6,A7,A8,A9],pure_getters,keep_fargs=false,unsafe_comps,unsafe&apos;</span> | uglifyjs --mangle --output <span class="hljs-variable">$min</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Compiled size:<span class="hljs-subst">$(wc $js -c)</span> bytes  (<span class="hljs-variable">$js</span>)&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Minified size:<span class="hljs-subst">$(wc $min -c)</span> bytes  (<span class="hljs-variable">$min</span>)&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Gzipped size: <span class="hljs-subst">$(gzip $min -c | wc -c)</span> bytes&quot;</span>
+</code></pre>
+<p>En lançant <code>./optimize.sh src/Main.elm</code> sur l&apos;application <a href="https://github.com/evancz/elm-todomvc" target="_blank">TodoMVC</a>, j&apos;obtiens le résultat suivant :</p>
+<pre><code>Compiled size:  122297 bytes  (elm.js)
+Minified size:   24123 bytes  (elm.min.js)
+Gzipped size:     9148 bytes
+</code></pre><p>Plutôt correct ! Seulement 9ko à transférer à l&apos;utilisateur.</p>
+<p>Les commandes importantes sont ici <code>elm</code> et <code>uglifyjs</code>, qui sont toutes deux disponibles sur toutes les plateformes. Il ne devrait donc pas y avoir de difficulté à faire fonctionner ce script sous Windows.</p>
+<h2 id="conseils">Conseils</h2>
+<p>Il est recommandé d&apos;écrire une <code>Browser.application</code> et de la compiler en un seul fichier JavaScript comme détaillé précédemment. Celui-ci sera téléchargé (et mis en cache) dès la première visite. Elm génère des fichiers plutôt compacts par rapport à ses concurrents, comme présenté <a href="https://elm-lang.org/blog/small-assets-without-the-headache" target="_blank">ici</a>. Cette stratégie peut donc vous mener loin.</p>
+<blockquote>
+<p><strong>Note:</strong> En théorie, il serait possible d&apos;obtenir des ressources encore plus compactes avec Elm. Ce n&apos;est pas possible pour le moment, mais, si vous travaillez sur des bases de code Elm supérieures à 50k lignes, nous serions intéressés par vos retours d&apos;expérience. Pour plus d&apos;informations, c&apos;est par <a href="https://gist.github.com/evancz/fc6ff4995395a1643155593a182e2de7" target="_blank">ici</a>!</p>
+</blockquote>
+<hr>
+<p><a href="https://github.com/elm-france/guide.elm-lang.org/tree/master/book/optimization/asset_size.md" target="_blank">Source de cette page</a> —
+<a href="https://github.com/elm-france/guide.elm-lang.org/edit/master/book/optimization/asset_size.md" target="_blank">Suggérer une modification</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="keyed.html" class="navigation navigation-prev " aria-label="Previous page: Html.keyed">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../next_steps.html" class="navigation navigation-next " aria-label="Next page: Prochaines étapes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Minification","level":"1.10.3","depth":2,"next":{"title":"Prochaines étapes","level":"1.11","depth":1,"path":"next_steps.md","ref":"next_steps.md","articles":[]},"previous":{"title":"Html.keyed","level":"1.10.2","depth":2,"path":"optimization/keyed.md","ref":"optimization/keyed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["elm-repl","bulk-redirect","-sharing","french-typography"],"root":"book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"bulk-redirect":{"basepath":"/","redirectsFile":"redirects.json"},"elm-repl":{},"french-typography":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Evan Czaplicki","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Une introduction à Elm","gitbook":"*","description":"Apprenez les fondamentaux de la programmation en Elm, construisez des applications Web et découvrez la programmation fonctionnelle."},"file":{"path":"optimization/asset_size.md","mtime":"2022-04-12T18:31:48.394Z","type":"markdown"},"gitbook":{"version":"3.7.1","time":"2022-04-12T18:32:06.846Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-elm-repl/repl.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
