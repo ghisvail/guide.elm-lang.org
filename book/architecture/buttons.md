@@ -2,7 +2,7 @@
 
 Notre premier exemple est un compteur qui peut être incrémenté ou décrémenté.
 
-J'ai ajouté le programme complet ci-dessous. Cliquez sur le bouton bleu "Éditer" pour jouer avec l'éditeur en ligne. Essayez de changer le texte sur un des boutons.
+La totalité du programme est disponible ci-dessous. Cliquez sur le bouton bleu "Éditer" pour jouer avec l'éditeur en ligne. Essayez de changer le texte sur un des boutons.
 **Cliquez maintenant sur le bouton bleu !**
 
 <div class="edit-link"><a href="https://elm-lang.org/examples/buttons">Éditer</a></div>
@@ -60,11 +60,11 @@ Une fois familiarisés avec le code, nous devrions nous poser quelques questions
 
 > **Note:** Ce code d'exemple utilise les [annotations de type](/types/reading_types.html), les [alias](/types/type_aliases.html), et les [types personnalisés](/types/custom_types.html). Cette section ne fait qu'esquisser les principes de l'Architecture Elm, que nous aborderons plus en détail par la suite. Cela dit, rien ne vous empêche de creuser dès à présent ces aspects si le cœur vous en dit !
 
-## Le point d'entrée `main`
+## Le point d'entrée -- `main`
 
-La valeur `main` est spéciale en Elm. Elle décrit ce qui sera affiché à l'écran. En l'occurrence, nous allons initialiser notre application avec la valeur `init`, la fonction `view` affichera tout ce qu'il y a à afficher à l'écran, et les entrées utilisateur seront transmises à la fonction `update`. C'est en quelque sorte la description générale de notre programme.
+La valeur `main` est spéciale en Elm. Elle décrit ce qui sera affiché à l'écran. En l'occurrence, l'application sera initialisée avec la valeur `init`, la fonction `view` affichera tout ce qu'il y a à afficher à l'écran, et les entrées utilisateur seront transmises à la fonction `update`. C'est en quelque sorte la description générale de notre programme.
 
-## Le Modèle
+## Le modèle -- `model`
 
 La modélisation des données est extrêmement importante en Elm. L'intérêt du **modèle** est de projeter tous les détails de votre application sous forme de données.
 
@@ -74,7 +74,7 @@ Pour réaliser un compteur, nous devons garder trace d'un nombre qui augmente ou
 type alias Model = Int
 ```
 
-Nous avons juste besoin d'une valeur `Int` (un nombre entier) pour stocker la valeur courante du compteur :
+Nous avons simplement besoin d'une valeur entière de type `Int` pour stocker la valeur courante du compteur :
 
 ```elm
 init : Model
@@ -82,11 +82,11 @@ init =
   0
 ```
 
-La valeur initiale est zéro, elle augmentera ou diminuera au fur et à mesure que les utilisateurs cliqueront sur les différents boutons.
+La valeur initiale est zéro, puis elle augmentera ou diminuera au fur et à mesure que les utilisateurs cliqueront sur les différents boutons.
 
-## La vue
+## La vue -- `view`
 
-Nous avons un modèle mais comment allons-nous l'afficher à l'écran ? C'est le rôle de la fonction `view` :
+Maintenant que nous avons un modèle, il faut pouvoir l'afficher à l'écran. C'est le rôle de la fonction `view` :
 
 ```elm
 view : Model -> Html Msg
@@ -104,9 +104,9 @@ Cette fonction prend le `model` en paramètre et renvoie du HTML. Nous déclaron
 - la valeur courante du compteur,
 - un bouton pour incrémenter le compteur.
 
-Notez l'emploi du gestionnaire d'événements `onClick` pour chaque bouton ; cela veut dire : **quand quelqu'un clique, envoie un message**. Donc, le bouton _plus_ envoie le message `Increment`. Où part ce message ? À la fonction `update` !
+Remarquez l'emploi du gestionnaire d'événements `onClick` pour chaque bouton ; cela veut dire : **quand quelqu'un clique, envoie un message**. Donc, le bouton _plus_ envoie le message `Increment`. Quel est ce message et où va t-il ? À la fonction `update`.
 
-## Mise à jour du modèle
+## Mise à jour du modèle -- `update`
 
 La fonction `update` décrit la façon dont le modèle va changer au fil du temps.
 
@@ -116,7 +116,7 @@ Nous avons défini deux messages qu'elle pourra recevoir :
 type Msg = Increment | Decrement
 ```
 
-À partir de là, la fonction `update` décrit simplement ce qu'il faut faire lorsqu'elle reçoit un des messages.
+À partir de là, la fonction `update` décrit simplement ce qu'il faut faire lorsqu'elle reçoit un de ces messages.
 
 ```elm
 update : Msg -> Model -> Model
@@ -129,13 +129,13 @@ update msg model =
       model - 1
 ```
 
-Si vous recevez un message `Increment`, vous incrémentez le modèle. Si vous recevez le message `Decrement`, vous le décrémentez.
+À la réception d'un message de type `Increment`, le modèle est incrémenté. À la réception d'un message de type `Decrement`, le modèle est décrémenté.
 
-À chaque fois que nous recevons un message, la fonction `update` traite le message afin d'obtenir un nouveau modèle. Ensuite, nous appelons la vue afin d'afficher le nouveau modèle à l'écran. Et ainsi de suite ! L'entrée utilisateur envoie un message, la fonction `update` met à jour le modèle, la fonction `view` l'affiche à l'écran. Etc.
+À chaque fois qu'un message est reçu, la fonction `update` traite ce message et génère un nouveau modèle. Ensuite, nous appelons la vue afin d'afficher ce nouveau modèle à l'écran. Et ainsi de suite ! Une interaction utilisateur envoie un message, la fonction `update` met à jour le modèle, la fonction `view` l'affiche à l'écran. Etc.
 
 ## En résumé
 
-Maintenant que nous avons abordé toutes les parties d'un programme Elm, il est peut-être un peu plus facile de voir comment elles s'intègrent dans le diagramme que nous avons vu précédemment :
+Maintenant que nous avons abordé toutes les parties d'un programme Elm, il est désormais plus facile de comprendre comment celles-ci s'intègrent dans le diagramme vu précédemment :
 
 ![Diagram of The Elm Architecture](buttons.svg)
 
@@ -158,4 +158,4 @@ C'est l'essence même de l'Architecture Elm. Chaque exemple que nous verrons à 
 >
 > Vous pouvez éditer l'exemple dans l'éditeur en ligne [ici](https://elm-lang.org/examples/buttons).
 >
-> Si tout s'est bien passé, essayez d'ajouter un bouton qui permet d'incrémenter le compteur de 10.
+> Pour aller plus loin, ajoutez un bouton permettant d'incrémenter le compteur de 10.
