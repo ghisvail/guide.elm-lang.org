@@ -64,7 +64,7 @@ Une fois familiarisés avec le code, nous devrions nous poser quelques questions
 
 La valeur `main` est spéciale en Elm. Elle décrit ce qui sera affiché à l'écran. En l'occurrence, l'application sera initialisée avec la valeur `init`, la fonction `view` affichera tout ce qu'il y a à afficher à l'écran, et les entrées utilisateur seront transmises à la fonction `update`. C'est en quelque sorte la description générale de notre programme.
 
-## Le modèle -- `model`
+## Modèle
 
 La modélisation des données est extrêmement importante en Elm. L'intérêt du **modèle** est de projeter tous les détails de votre application sous forme de données.
 
@@ -84,7 +84,7 @@ init =
 
 La valeur initiale est zéro, puis elle augmentera ou diminuera au fur et à mesure que les utilisateurs cliqueront sur les différents boutons.
 
-## La vue -- `view`
+## Vue
 
 Maintenant que nous avons un modèle, il faut pouvoir l'afficher à l'écran. C'est le rôle de la fonction `view` :
 
@@ -106,7 +106,7 @@ Cette fonction prend le `model` en paramètre et renvoie du HTML. Nous déclaron
 
 Remarquez l'emploi du gestionnaire d'événements `onClick` pour chaque bouton ; cela veut dire : **quand quelqu'un clique, envoie un message**. Donc, le bouton _plus_ envoie le message `Increment`. Quel est ce message et où va t-il ? À la fonction `update`.
 
-## Mise à jour du modèle -- `update`
+## Mise à jour du modèle
 
 La fonction `update` décrit la façon dont le modèle va changer au fil du temps.
 
