@@ -45,20 +45,20 @@ view model =
 
 Essayez-le dans l'éditeur en ligne [ici](https://elm-lang.org/examples/buttons).
 
-Le code peut vous sembler peu familier au premier abord, c'est pourquoi nous analyserons par la suite comment cet exemple fonctionne.
+Le code peut sembler peu familier au premier abord, c'est pourquoi nous verrons bientôt comment fonctionne cet exemple !
 
 
 ## Pourquoi un *langage* fonctionnel?
 
 Programmer dans un *style* fonctionnel présentent certains avantages, mais il y a des choses que vous ne pourrez obtenir que dans un *langage* fonctionnel comme Elm :
 
-  - Pas d'erreur d'exécution en pratique.
+  - Aucune erreur d'exécution en pratique.
   - Des messages d'erreur conviviaux.
   - Une factorisation de code fiable.
   - Un versionnement sémantique automatique de tous les paquets Elm.
 
-Aucune combinaison de bibliothèques JavaScript ne donne toutes ces garanties car elles proviennent de la conception même du langage ! Ce sont ces garanties qui font souvent dire aux programmeurs Elm qu'ils ne se sont jamais sentis aussi **confiants** en codant, que ce soit pour ajouter des fonctionnalités rapidement ou remanier des milliers de lignes. Sans l'angoisse de manquer quelque chose d'important !
+Aucune combinaison de bibliothèques JS ne peut vous donner toutes ces garanties car elles proviennent de la conception même du langage ! Et grâce à ces garanties, il est assez courant pour les programmeurs Elm de dire qu'ils ne se sont jamais sentis aussi **confiants** en programmant. Confiants pour ajouter des fonctionnalités rapidement. Confiants pour remanier des milliers de lignes. Mais sans l'angoisse de manquer quelque chose d'important !
 
-Elm est conçu pour être facile à apprendre et à utiliser. Essayez ce langage et vérifiez-le par vous-même. Vous serez agréablement surpris !
+J'ai mis l'accent sur la facilité d'apprentissage et d'utilisation d'Elm, donc tout ce que je vous demande, c'est d'essayer Elm et de voir ce que vous en pensez. J'espère que vous serez agréablement surpris !
 
 > **Note :** Ce guide est le fruit d'un travail de traduction entrepris par la communauté [elm-france](https://elm-france.fr/) du [guide officiel](https://guide.elm-lang.org/) écrit par Evan Czaplicki. Les codes sources des guides [officiel](https://github.com/elm-guides/elm-lang.org) (en anglais) et [français](https://github.com/elm-france/guide.elm-lang.org) sont disponibles sous license [Creative Commons BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0).
