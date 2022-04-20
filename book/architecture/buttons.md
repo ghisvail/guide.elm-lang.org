@@ -60,11 +60,11 @@ Une fois familiarisés avec le code, nous devrions nous poser quelques questions
 
 > **Note:** Ce code d'exemple utilise les [annotations de type](/types/reading_types.html), les [alias](/types/type_aliases.html), et les [types personnalisés](/types/custom_types.html). Cette section ne fait qu'esquisser les principes de l'Architecture Elm, que nous aborderons plus en détail par la suite. Cela dit, rien ne vous empêche de creuser dès à présent ces aspects si le cœur vous en dit !
 
-## Le point d'entrée -- `main`
+## Le point d'entrée `main`
 
 La valeur `main` est spéciale en Elm. Elle décrit ce qui sera affiché à l'écran. En l'occurrence, l'application sera initialisée avec la valeur `init`, la fonction `view` affichera tout ce qu'il y a à afficher à l'écran, et les entrées utilisateur seront transmises à la fonction `update`. C'est en quelque sorte la description générale de notre programme.
 
-## Modèle
+## Le modèle
 
 La modélisation des données est extrêmement importante en Elm. L'intérêt du **modèle** est de projeter tous les détails de votre application sous forme de données.
 
@@ -84,7 +84,7 @@ init =
 
 La valeur initiale est zéro, puis elle augmentera ou diminuera au fur et à mesure que les utilisateurs cliqueront sur les différents boutons.
 
-## Vue
+## La vue
 
 Maintenant que nous avons un modèle, il faut pouvoir l'afficher à l'écran. C'est le rôle de la fonction `view` :
 
@@ -104,7 +104,7 @@ Cette fonction prend le `model` en paramètre et renvoie du HTML. Nous déclaron
 - la valeur courante du compteur,
 - un bouton pour incrémenter le compteur.
 
-Remarquez l'emploi du gestionnaire d'événements `onClick` pour chaque bouton ; cela veut dire : **quand quelqu'un clique, envoie un message**. Donc, le bouton _plus_ envoie le message `Increment`. Quel est ce message et où va t-il ? À la fonction `update`.
+Notez l'emploi du gestionnaire d'événements `onClick` pour chaque bouton ; cela veut dire : **quand quelqu'un clique, envoie un message**. Donc, le bouton _plus_ envoie le message `Increment`. Où part ce message ? À la fonction `update` !
 
 ## Mise à jour du modèle
 
@@ -129,9 +129,9 @@ update msg model =
       model - 1
 ```
 
-À la réception d'un message de type `Increment`, le modèle est incrémenté. À la réception d'un message de type `Decrement`, le modèle est décrémenté.
+Si vous recevez un message `Increment`, vous incrémentez le modèle. Si vous recevez le message `Decrement`, vous le décrémentez.
 
-À chaque fois qu'un message est reçu, la fonction `update` traite ce message et génère un nouveau modèle. Ensuite, nous appelons la vue afin d'afficher ce nouveau modèle à l'écran. Et ainsi de suite ! Une interaction utilisateur envoie un message, la fonction `update` met à jour le modèle, la fonction `view` l'affiche à l'écran. Etc.
+À chaque fois que nous recevons un message, la fonction `update` traite le message afin d'obtenir un nouveau modèle. Ensuite, nous appelons la vue afin d'afficher le nouveau modèle à l'écran. Et ainsi de suite ! L'entrée utilisateur envoie un message, la fonction `update` met à jour le modèle, la fonction `view` l'affiche à l'écran. Etc.
 
 ## En résumé
 
@@ -158,4 +158,4 @@ C'est l'essence même de l'Architecture Elm. Chaque exemple que nous verrons à 
 >
 > Vous pouvez éditer l'exemple dans l'éditeur en ligne [ici](https://elm-lang.org/examples/buttons).
 >
-> Pour aller plus loin, ajoutez un bouton permettant d'incrémenter le compteur de 10.
+> Si tout s'est bien passé, essayez d'ajouter un bouton qui permet d'incrémenter le compteur de 10.
