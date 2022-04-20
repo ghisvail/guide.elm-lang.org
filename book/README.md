@@ -10,7 +10,7 @@ Ce guide va :
 
 Suite à la lecture de ce guide, vous serez non seulement capable de créer de superbes applications web avec Elm, mais aussi de comprendre les idées et les concepts fondamentaux qui rendent Elm agréable à utiliser.
 
-Si vous hésitez encore, sachez qu'essayer Elm sur un projet concret améliorera à coup sûr votre écriture de code JavaScript. Toutes les idées abordées dans ce guide sont facilement transférables !
+Si vous hésitez encore, je peux vous garantir que si vous donnez une chance à Elm et que vous l'utilisez pour réellement coder un projet, vous finirez quoiqu'il en soit par écrire un meilleur code JavaScript. Les idées sont facilement transférables !
 
 
 ## Un exemple concis
