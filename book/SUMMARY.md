@@ -1,6 +1,6 @@
 # Table des matières
 
-* [Une introduction à Elm](README.md)
+* [Introduction](README.md)
 * [Bases du langage](core_langage.md)
 * [L'Architecture Elm](architecture/README.md)
    * [Boutons](architecture/buttons.md)
